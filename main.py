@@ -1,4 +1,3 @@
-
 DELIMITER = ','
 def collectWords():
   word=input("Insert word(empty stops): ")
@@ -12,10 +11,11 @@ def analyseWords(allwords):
   words=allwords.split(DELIMITER)
   words.remove("")
   wordamount=len(words)
-  charamount=len(allwords)-wordamount
+  charamount=len(allwords)-allwords.count(DELIMITER)
   print(f"- {wordamount} Words")
   print(f"- {charamount} Characters")
-  print(f"{charamount/wordamount} Average word length")
+  Avg=charamount/wordamount
+  print("- {:.2f} Average word length".format(Avg))
 
 def main():    
   print("Program starting.")
